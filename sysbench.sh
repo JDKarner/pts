@@ -20,6 +20,17 @@ echo "Installing Phoronix Test Suite..."
 cd "$pts_dir" || exit
 sudo ./install-sh
 
+# **Create pts.sh script on Desktop**
+desktopPTS="$HOME/Desktop/pts.sh"
+if [ ! -f "$desktopPTS" ]; then
+    echo "Creating pts.sh script on Desktop..."
+    echo "#!/bin/bash" > "$desktopPTS"
+    echo "phoronix-test-suite phoromatic.connect 192.168.50.26:17761/UNHLT0" >> "$desktopPTS"
+    
+    # Make the script executable
+    chmod +x "$desktopPTS"
+fi
+
 # **Create alias in .bashrc if not already present**
 alias_line='alias pts="./phoronix-test-suite/phoronix-test-suite"'
 if ! grep -q "$alias_line" "$HOME/.bashrc"; then
