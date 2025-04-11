@@ -1,6 +1,6 @@
 #!/bin/bash
 # **Check for dependencies and install if missing**
-packages=(git php-cli php-xml php-gd php-bz2 php-sqlite3 php-curl php-zip openssh-server ninja-build cmake)
+packages=(git php-cli php-xml php-gd php-bz2 php-sqlite3 php-curl php-zip openssh-server ninja-build cmake pip3)
 for package in "${packages[@]}"; do
     if ! dpkg -s "$package" &> /dev/null; then
         echo "Installing missing package: $package"
