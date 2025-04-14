@@ -25,8 +25,8 @@ desktopPTS="$HOME/Desktop/pts.sh"
 if [ ! -f "$desktopPTS" ]; then
     echo "Creating pts.sh script on Desktop..."
     echo "#!/bin/bash" > "$desktopPTS"
-    #I might change this to ask for the phoromatic.connect url
     echo "phoronix-test-suite phoromatic.connect 192.168.50.26:17761/ZK1K3G" >> "$desktopPTS"
+    #If using outside my phoromatic server, change "phoronix-test-suite phoromatic.connect" to your server ip and code
     
     # Make the script executable
     chmod +x "$desktopPTS"
