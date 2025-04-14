@@ -32,7 +32,7 @@ if [ ! -f "$desktopPTS" ]; then
     # Make the script executable
     chmod +x "$desktopPTS"
 fi
-
+### -------Cut or comment for no ssh-------
 # **Create alias in .bashrc if not already present**
 alias_line='alias pts="./phoronix-test-suite/phoronix-test-suite"'
 if ! grep -q "$alias_line" "$HOME/.bashrc"; then
@@ -58,5 +58,5 @@ if [ -n "$hostname_value" ]; then
 else
     echo "No hostname provided. Skipping hostname change."
 fi
-
+### -------Cut or comment for no ssh-------
 echo "Setup complete!"
