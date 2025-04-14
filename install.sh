@@ -1,6 +1,7 @@
 #!/bin/bash
 # **Check for dependencies and install if missing**
-packages=(git php-cli php-xml php-gd php-bz2 php-sqlite3 php-curl php-zip openssh-server ninja-build cmake python3-pip)
+# Packages after openssh are dependencies for my test suite, these can be removed or add more here if you need more packages installed for your test suite.
+packages=(php-cli php-xml php-gd php-bz2 php-sqlite3 php-curl php-zip openssh-server ninja-build cmake python3-pip)
 for package in "${packages[@]}"; do
     if ! dpkg -s "$package" &> /dev/null; then
         echo "Installing missing package: $package"
