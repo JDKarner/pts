@@ -1,4 +1,4 @@
-# sysbench
+# PTS
 Automating the adding of systems to a phoromatic server
 Pre-installing some test dependencies.
 
