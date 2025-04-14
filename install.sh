@@ -43,8 +43,7 @@ if ! grep -q "$alias_line" "$HOME/.bashrc"; then
 fi
 
 # **Install and enable OpenSSH server**
-echo "Installing and enabling OpenSSH server..."
-sudo apt-get install -y openssh-server
+echo "Enabling OpenSSH server..."
 sudo systemctl enable ssh
 
 # **Set hostname based on user input**
