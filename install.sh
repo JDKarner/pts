@@ -18,19 +18,20 @@ fi
 
 # **Install Phoronix Test Suite**
 echo "Installing Phoronix Test Suite..."
+mkdir /home/oem/pts/
 cd "$pts_dir" || exit
 sudo ./install-sh
 
 # **Create pts.sh script on Desktop**
-desktopPTS="$HOME/Desktop/pts.sh"
-if [ ! -f "$desktopPTS" ]; then
+PTS="$HOME/pts/client.sh"
+if [ ! -f "$PTS" ]; then
     echo "Creating pts.sh script on Desktop..."
-    echo "#!/bin/bash" > "$desktopPTS"
-    echo "phoronix-test-suite phoromatic.connect 192.168.50.26:17761/ZK1K3G" >> "$desktopPTS"
+    echo "#!/bin/bash" > "$PTS"
+    echo "phoronix-test-suite phoromatic.connect 192.168.50.26:17761/ZK1K3G" >> "$PTS"
     #If using outside my phoromatic server, change "phoronix-test-suite phoromatic.connect" to your server ip and code
     
     # Make the script executable
-    chmod +x "$desktopPTS"
+    chmod +x "$PTS"
 fi
 ### -------Cut or comment for no ssh-------
 # **Create alias in .bashrc if not already present**
