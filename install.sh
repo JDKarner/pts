@@ -48,7 +48,7 @@ echo "Enabling OpenSSH server..."
 sudo systemctl enable ssh
 
 # **Set hostname based on user input**
-read -p "Please enter your order or RMA number: " hostname_value
+read -p "Please enter your Order#, RMA#, or RTS Serial Number: " hostname_value
 if [ -n "$hostname_value" ]; then
     echo "Setting hostname to $hostname_value..."
     sudo hostnamectl set-hostname "$hostname_value"
